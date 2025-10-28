@@ -56,10 +56,10 @@ class Temperatures2
         double[] avgT = new double[nofWeeks + 1];
         for (int week = 1; week <= nofWeeks; week++)
         {
-            minT[week] = // add code here
-                maxT[week] = // add code here
-                sumT[week] = // add code here
-                avgT[week] = // add code here
+            minT[week] = min(t[week]);
+            maxT[week] = max(t[week]);
+            sumT[week] = sum(t[week]);
+            avgT[week] = sumT[week] / nofMeasurementsPerWeek;
         }
         // show the least, greatest and average temperatures
         out.println("the least, greatest and average temperatures"
@@ -69,14 +69,14 @@ class Temperatures2
         print(avgT);
         out.println();
         // the least, greatest and average temperatures - whole period
-        double minTemp = // add code here
-            double maxTemp = // add code here
-            double sumTemp = // add code here
-            double avgTemp = // add code here
-                             // show the least, greatest and average temperature for
-                             // the whole period
-            out.println("the least, greatest and average temperature"
-                    + " - whole period");
+        double minTemp = min(minT);
+        double maxTemp = max(maxT);
+        double sumTemp = sum(sumT);
+        double avgTemp = sumTemp / (nofWeeks * nofMeasurementsPerWeek);
+        // show the least, greatest and average temperature for
+        // the whole period
+        out.println("the least, greatest and average temperature"
+                + " - whole period");
         out.println(minTemp + "\n" + maxTemp + "\n" + avgTemp);
     }
     // read reads the temperatures and stores them in a specified
@@ -102,18 +102,35 @@ class Temperatures2
     // Temperatures are given from index 1, inclusive.
     public static double min (double[] temp)
     {
+        double smallest = temp[1];
         // add code here
+        for(int n = 2; n < temp.length; n++){
+            if (temp[n] < smallest){
+                smallest = temp[n];
+            }
+        }
+        return smallest;
     }
     // max returns the greatest temperature in a specified array.
     // Temperatures are given from index 1, inclusive.
     public static double max (double[] temp)
     {
-        // add code here
+        double largest = temp[1];
+        for(int n = 2; n < temp.length; n++){
+            if (temp[n] > largest){
+                largest = temp[n];
+            }
+        }
+        return largest;
     }
     // sum returns the sum of the temperatures in a specified array.
     // Temperatures are given from index 1, inclusive.
     public static double sum (double[] temp)
     {
-        // add code here
+        double sum = 0;
+        for(int n = 1; n < temp.length; n++){
+            sum += temp[n];
+        }
+        return sum;
     }
 }
