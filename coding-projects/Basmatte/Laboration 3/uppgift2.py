@@ -56,6 +56,7 @@ plt.title(f'Operationer med komplexa tal')
 
 #Lägg till en Legend (som vi har gjort i Labb2)
 plt.legend()
+plt.grid(True)
 
 #plt.grid(True) #ritar ...? Försök kommentera bort!
 
