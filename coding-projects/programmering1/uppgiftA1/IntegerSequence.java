@@ -25,8 +25,8 @@ class IntegerSequence
         }
         double mean = (double) sum / (u.length - 1);
         // present the result
-        System.out.println("the least integer and the mean value of all
-                integers");
+        System.out.println("the least integer and the mean value " 
+               + "of all integers");
         System.out.printf("%4d | %7.2f\n\n\n", min, mean);
     }
 }

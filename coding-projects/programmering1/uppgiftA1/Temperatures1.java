@@ -74,7 +74,7 @@ class Temperatures1 {
             
             // if there is only one measurement per week the values are 
             // already correct
-            if (nofMeasurementsPerWeek > 0) {
+            if (nofMeasurementsPerWeek > 1) {
                 // start looping at measurement 2 since measurement 1
                 // has already been assigned
                 for (int measurement = 2; 

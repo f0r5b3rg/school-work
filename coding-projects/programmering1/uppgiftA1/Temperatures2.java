@@ -103,7 +103,6 @@ class Temperatures2
     public static double min (double[] temp)
     {
         double smallest = temp[1];
-        // add code here
         for(int n = 2; n < temp.length; n++){
             if (temp[n] < smallest){
                 smallest = temp[n];
